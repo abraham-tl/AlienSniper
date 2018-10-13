@@ -4,22 +4,25 @@ using UnityEngine;
 using UnityEngine.UI;
 public class LookATZoom : MonoBehaviour {
 
-    bool active;
+    public bool active;
     public Image sight;
 	// Use this for initialization
 	void Start () {
-        active = false;
+        active = true;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		if(Input.GetButtonDown("Fire1"))
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetButtonDown("Fire1"))
         {
+
+           // Debug.Log(zoom);
             print("HOLA");
-            if(active)
+            if (active)
             {
-                Camera.main.fieldOfView = 4f;
-                //gameObject.GetComponent<Camera>().fieldOfView = 4f;
+
+                gameObject.GetComponent<Camera>().fieldOfView = 4f;
                 active = false;
             }
             else
@@ -29,7 +32,9 @@ public class LookATZoom : MonoBehaviour {
             }
             Sight();
         }
-	}
+
+    }
+
 
     public void Sight()
     {
