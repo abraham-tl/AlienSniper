@@ -49,7 +49,7 @@ public class ControlTime : MonoBehaviour
             mT += 1;
         }
         segundos = (int)s;
-        FindObjectOfType<Records>().TimeRun();
+        FindObjectOfType<InterfasUsuario>().TimeRun();
     }
     public void Guarda()
     {
@@ -69,8 +69,8 @@ public class ControlTime : MonoBehaviour
     {
         s = 0;
         minutos = 0;
-        FindObjectOfType<Records>().TotalTime();
-        FindObjectOfType<Menu>().activo = true;
+        FindObjectOfType<InterfasUsuario>().TotalTime();
+        FindObjectOfType<InterfasUsuario>().activo = true;
     }
     public int min;
     public int seg;
@@ -80,8 +80,8 @@ public class ControlTime : MonoBehaviour
         minutos = min;
         sT = 0;
         mT = 0;
-        FindObjectOfType<Menu>().activo = false;
+        FindObjectOfType<InterfasUsuario>().activo = false;
         FindObjectOfType<ManangerEnemy>().Reset();
-        FindObjectOfType<Records>().RecorsGame();
+        FindObjectOfType<InterfasUsuario>().RecorsGame();
     }
 }

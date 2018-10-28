@@ -11,7 +11,7 @@ public class Collissions : MonoBehaviour
         {
             npc.sangrar = true;
             FindObjectOfType<Disparo>().activa = true;
-            FindObjectOfType<Records>().m += 1;
+            FindObjectOfType<InterfasUsuario>().m += 1;
             FindObjectOfType<ManangerEnemy>().contadorE -= 1;
             this.gameObject.SetActive(false);
         }

@@ -22,7 +22,7 @@ public class Disparo : MonoBehaviour
     {
         if (activa)
         {
-            FindObjectOfType<Records>().HeadShoot();
+            FindObjectOfType<InterfasUsuario>().HeadShoot();
         }
     }
     public void Atributos()

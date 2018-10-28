@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class Records : MonoBehaviour
+public class InterfasUsuario : MonoBehaviour
 {
+    //Records de la escena
     public int m;//numero de muertos
     public Text deads;//en canvas el numero de muertos
     public Text disparos;//en canvas el numero de disparos
@@ -24,11 +26,13 @@ public class Records : MonoBehaviour
 
     private void Start()
     {
+        activo = false;
         maxT = 5;
         headShoot.enabled = !headShoot.enabled;
     }
     private void Update()
     {
+        MenuGame();
         deads.text = "Muertes: " + m;
         disparos.text = "Disparos: " + FindObjectOfType<Disparo>().numDisparo;
     }
@@ -60,6 +64,37 @@ public class Records : MonoBehaviour
             headShoot.enabled = false;
             corret = 0;
             FindObjectOfType<Disparo>().activa = false;
+        }
+    }
+
+
+    //Menu deSceneGame
+    public Image fondo;
+    public GameObject fondoG;
+    public GameObject play;
+    public bool activo;
+    public int rango;
+
+    public void MenuGame()
+    {
+        if (activo)
+        {
+            fondoG.SetActive(true);
+            fondo.fillAmount += 5 * Time.deltaTime;
+        }
+        else
+        {
+            fondo.fillAmount -= 5 * Time.deltaTime;
+        }
+
+        if (fondo.fillAmount == 1)
+        {
+            play.SetActive(true);
+        }
+        else if (fondo.fillAmount == 0)
+        {
+            fondoG.SetActive(false);
+            play.SetActive(false);
         }
     }
 }

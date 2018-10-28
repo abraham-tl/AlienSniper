@@ -239,26 +239,6 @@ Prefab:
       propertyPath: sight
       value: 
       objectReference: {fileID: 752332407}
-    - target: {fileID: 114878864536316148, guid: 6c43d4b156802e74ab02a2ffa65bbefd,
-        type: 2}
-      propertyPath: disparos
-      value: 
-      objectReference: {fileID: 964122269}
-    - target: {fileID: 114878864536316148, guid: 6c43d4b156802e74ab02a2ffa65bbefd,
-        type: 2}
-      propertyPath: headShoot
-      value: 
-      objectReference: {fileID: 605870520}
-    - target: {fileID: 114878864536316148, guid: 6c43d4b156802e74ab02a2ffa65bbefd,
-        type: 2}
-      propertyPath: deads
-      value: 
-      objectReference: {fileID: 1924147189}
-    - target: {fileID: 20157243814876198, guid: 6c43d4b156802e74ab02a2ffa65bbefd,
-        type: 2}
-      propertyPath: field of view
-      value: 60
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c43d4b156802e74ab02a2ffa65bbefd, type: 2}
   m_IsPrefabAsset: 0
@@ -378,7 +358,6 @@ GameObject:
   - component: {fileID: 1478763107}
   - component: {fileID: 1478763106}
   - component: {fileID: 1478763108}
-  - component: {fileID: 1478763109}
   m_Layer: 0
   m_Name: Controlador
   m_TagString: Untagged
@@ -398,7 +377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftJoystickBackgroundImage: {fileID: 1238016896}
-  leftJoyStickAlwaysVisible: 0
+  leftJoyStickAlwaysVisible: 1
 --- !u!4 &1478763105
 Transform:
   m_ObjectHideFlags: 0
@@ -456,23 +435,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1478763103}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6052b6d8d4163f041a3fba076188743f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fondo: {fileID: 248773049}
-  fondoG: {fileID: 248773047}
-  play: {fileID: 1660836814}
-  activo: 0
-  rango: 0
---- !u!114 &1478763109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1478763103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f409573a86b3834992d1f3d25ad1b4c, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a2310f4e18cf1f4499c3bd813c9a725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m: 0
@@ -484,6 +447,11 @@ MonoBehaviour:
   TSeg: 0
   TotalShoot: 0
   TotalDeads: 0
+  fondo: {fileID: 248773049}
+  fondoG: {fileID: 248773047}
+  play: {fileID: 1660836814}
+  activo: 0
+  rango: 0
 --- !u!1001 &1609103608
 Prefab:
   m_ObjectHideFlags: 0
@@ -491,11 +459,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114220584252323478, guid: e25f44e01d81ecc4b8687a778edf87f3,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 224038602030320048, guid: e25f44e01d81ecc4b8687a778edf87f3,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -586,6 +549,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114220584252323478, guid: e25f44e01d81ecc4b8687a778edf87f3,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1478763106}
     - target: {fileID: 114894893517723016, guid: e25f44e01d81ecc4b8687a778edf87f3,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -596,85 +564,6 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1816399706}
-    - target: {fileID: 224905492326157360, guid: e25f44e01d81ecc4b8687a778edf87f3,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224164869539209676, guid: e25f44e01d81ecc4b8687a778edf87f3,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 224468625398052086, guid: e25f44e01d81ecc4b8687a778edf87f3,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224218611780126388, guid: e25f44e01d81ecc4b8687a778edf87f3,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 224562843950934898, guid: e25f44e01d81ecc4b8687a778edf87f3,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 224490039480076762, guid: e25f44e01d81ecc4b8687a778edf87f3,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114420018530753078, guid: e25f44e01d81ecc4b8687a778edf87f3,
-        type: 2}
-      propertyPath: m_FillAmount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114220584252323478, guid: e25f44e01d81ecc4b8687a778edf87f3,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114220584252323478, guid: e25f44e01d81ecc4b8687a778edf87f3,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114220584252323478, guid: e25f44e01d81ecc4b8687a778edf87f3,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1478763106}
-    - target: {fileID: 114220584252323478, guid: e25f44e01d81ecc4b8687a778edf87f3,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ResetTime
-      objectReference: {fileID: 0}
-    - target: {fileID: 114220584252323478, guid: e25f44e01d81ecc4b8687a778edf87f3,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 224127350155605694, guid: e25f44e01d81ecc4b8687a778edf87f3,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 224431215867960438, guid: e25f44e01d81ecc4b8687a778edf87f3,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 224995985217631838, guid: e25f44e01d81ecc4b8687a778edf87f3,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1072758537930086, guid: e25f44e01d81ecc4b8687a778edf87f3, type: 2}
-      propertyPath: m_Name
-      value: Deads
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e25f44e01d81ecc4b8687a778edf87f3, type: 2}
   m_IsPrefabAsset: 0

@@ -743,16 +743,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numDisparo: 0
-  disparos: {fileID: 0}
-  headShoot: {fileID: 0}
   proyectil: {fileID: 1923006464993716, guid: 907759b960302fb4187c3cf41d8d0f1e, type: 2}
   spawnpoint: {fileID: 4575877246807412}
   force: 0
   source: {fileID: 82492337577556748}
   efectodisparo: {fileID: 8300000, guid: 21a75f5c054bc534ca809cd0c89a0b19, type: 3}
   particle: {fileID: 198979227311263870}
-  corret: 0
-  maxT: 0
   activa: 0
 --- !u!114 &114879972037776566
 MonoBehaviour:
@@ -783,7 +779,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posJoistyckX: 0
   posJoistyckY: 0
-  secibility: 40
+  secibility: 60
   valorLimite: 0
 --- !u!198 &198979227311263870
 ParticleSystem:

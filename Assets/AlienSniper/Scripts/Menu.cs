@@ -1,43 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class Menu : MonoBehaviour
 {
-    public Image fondo;
-    public GameObject fondoG;
-    public GameObject play;
-    public bool activo;
-    public int rango;
-
-    private void Start()
+    //Llama la escena  Ir_Menu
+    public void Go_Menu()
     {
-        activo = false;
+        SceneManager.LoadScene("Scene_Menu");
     }
-    void Update () {
-        MenuGame();
-    }
-    public void MenuGame()
+    //Llama la escena Ir_Instructions
+    public void Go_Instructions()
     {
-        if (activo)
-        {
-            fondoG.SetActive(true);
-            fondo.fillAmount += 5 * Time.deltaTime;
-        }
-        else
-        {
-            fondo.fillAmount -= 5 * Time.deltaTime;
-        }
+        SceneManager.LoadScene("Scene_Instructions");
+    }
+    //Llama la escena Ir_Registry
+    public void Go_Registry()
+    {
+        SceneManager.LoadScene("Scene_Menu");
+    }
+    //Llama la escena Ir_Scoores
+    public void Go_Scoores()
+    {
+        SceneManager.LoadScene("Scene_Scoores");
+    }
 
-        if (fondo.fillAmount == 1)
-        {
-            play.SetActive(true);
-        }
-        else if (fondo.fillAmount == 0)
-        {
-            fondoG.SetActive(false);
-            play.SetActive(false);
-        }
+    public void Go_Game()
+    {
+        SceneManager.LoadScene("Scene_Game");
+    }
+
+    //Sale de la aplicacion
+    public void Exit_Game()
+    {
+        Application.Quit();
     }
 }

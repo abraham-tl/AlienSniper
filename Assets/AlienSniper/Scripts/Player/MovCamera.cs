@@ -15,15 +15,15 @@ public class MovCamera : MonoBehaviour {
     void Start () {
         leftJoystick = FindObjectOfType<LeftJoystick>();
         limiteYp.y = -30f;
-        limiteYn.y = 40f;
+        limiteYn.y = 60f;
     }
 	
 	void Update () {
         MovCam();
         if (FindObjectOfType<ZoomCamera>().active_Zoom == true)
-            secibility = 2.5f;
+            secibility = 5f;
         else
-            secibility = 40f;
+            secibility = 60f;
     }
 
     public void MovCam()
