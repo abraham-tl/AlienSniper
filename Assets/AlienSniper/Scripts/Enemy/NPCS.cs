@@ -23,7 +23,7 @@ public class NPCS : MonoBehaviour {
         timeRun += Time.deltaTime;
         if (timeRun >= timeMax)
         {
-            i = Random.Range(0, 5);
+            i = Random.Range(0, 3);
             timeRun = 0;
         }
 
@@ -33,13 +33,10 @@ public class NPCS : MonoBehaviour {
                 transform.position += transform.forward * speed * Time.deltaTime;
                 break;
             case 1:
-                transform.position -= transform.forward * speed * Time.deltaTime;
+                transform.Rotate(0, 10 * speed * Time.deltaTime, 0);
                 break;
             case 2:
-                transform.position += transform.right * speed * Time.deltaTime;
-                break;
-            case 3:
-                transform.position -= transform.right * speed * Time.deltaTime;
+                transform.Rotate(0, -10 * speed * Time.deltaTime, 0);
                 break;
             default:
                 break;

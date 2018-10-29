@@ -81,6 +81,7 @@ public class ControlTime : MonoBehaviour
         sT = 0;
         mT = 0;
         FindObjectOfType<InterfasUsuario>().activo = false;
+        FindObjectOfType<ZoomCamera>().Play_Zoom();
         FindObjectOfType<ManangerEnemy>().Reset();
         FindObjectOfType<InterfasUsuario>().RecorsGame();
     }
