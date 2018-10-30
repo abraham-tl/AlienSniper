@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class NPCS : MonoBehaviour {
-
+    public Vector3 [] pos_enemy;
+    
     public float speed;
     public float timeMax;
     public float timeRun;
     int i;
+    public int cant_pos;
     private void Start()
     {
+        cant_pos = 10;
+        pos_enemy = new Vector3[cant_pos];
         timeMax = Random.Range(1,5);
         speed = Random.Range(1,5);
     }
