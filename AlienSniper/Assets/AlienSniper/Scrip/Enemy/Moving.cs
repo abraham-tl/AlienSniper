@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Moving : MonoBehaviour {
-    
-    public Vector3 Posicion_destino;
 
+    public bool state;
+
+    public Vector3 Posicion_destino;
     public int estado;
+
+    float timer;
 	// Use this for initialization
 	void Start ()
     {
+        state = false;
         estado = 0;
+        timer = 0;
         Posicion_destino = FindObjectOfType<Util>().Asignar_posicion();
 	}
 	
@@ -24,9 +29,27 @@ public class Moving : MonoBehaviour {
                 transform.position += transform.forward * (Time.deltaTime * 10);
             }
         }
+
+        timer += Time.deltaTime;
+        if (state==false && timer >10)
+        {
+            state = true;
+            timer = 0;
+        }
+        if (state)
+        {
+
+
+        }
+
+ 
+
     }
 
+    public void Enemy_Take()
+    {
 
+    }
 
 
 

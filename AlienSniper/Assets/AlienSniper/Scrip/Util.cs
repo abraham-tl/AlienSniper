@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Util : MonoBehaviour {
-
+    
     float timer = 0;
     int i = 0;
 
+    public GameObject[] ally_group;
     public Vector3[] posicion_entrada;
+
     public int cant_posiciones;
+    public int cant_ally;
+
     public Vector3 posicion_inicial;
     public float posicion_x;
     public float posicion_z;
@@ -19,8 +23,12 @@ public class Util : MonoBehaviour {
 
     public bool tropa = false;
     // Use this for initialization
-    void Start () {
-        
+    void Start() {
+        cant_ally = 5;
+        ally_group = new GameObject[cant_ally];
+        Load_Ally();
+
+
         posicion_inicial = new Vector3(-25, 2, 42);
         posicion_x = posicion_inicial.x;
         posicion_y = 2;
@@ -31,6 +39,7 @@ public class Util : MonoBehaviour {
         Cargar_posiciones();
         asignacion = 0;
         
+
     }
 	
 	// Update is called once per frame
@@ -82,4 +91,37 @@ public class Util : MonoBehaviour {
         return posicion;
         
     }
+
+    public void Load_Ally()
+    {
+        for (int j =0;j< cant_ally;j++)
+        {
+            string names = "Ally" + j;
+            GameObject Ally = Instantiate(Resources.Load("Ally01") as GameObject, transform.position, transform.rotation);
+            Ally.transform.position = new Vector3(0+(j*10), 0, 0);
+            ally_group[j] = Ally;
+            Ally.name = names;
+        }
+
+    }
+    public Vector3  Assign_Ally()
+    {
+        Vector3 posocion;
+      
+        for (int j=0; j< cant_ally; j++)
+        {
+            if (ally_group[j].gameObject.GetComponent<Ally>().attacking == false)
+            {
+                ally_group[j].gameObject.GetComponent<Ally>().attacking = true;
+                posocion = ally_group[j].transform.position;
+                break;
+            }
+           if(j == (cant_ally-1))
+            {
+                posocion = ally_group[j].transform.position;
+            }
+        }
+        return new Vector3(0,0,0);
+    }
+
 }
