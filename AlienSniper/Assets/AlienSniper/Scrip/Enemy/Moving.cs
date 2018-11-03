@@ -10,7 +10,6 @@ public class Moving : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-
         estado = 0;
         Posicion_destino = FindObjectOfType<Util>().Asignar_posicion();
 	}
