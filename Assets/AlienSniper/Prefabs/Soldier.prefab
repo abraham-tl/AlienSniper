@@ -1079,7 +1079,7 @@ GameObject:
   - component: {fileID: 4509865279518140}
   m_Layer: 0
   m_Name: smdpatch_r6s_jager_body2_model0
-  m_TagString: Besaca
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

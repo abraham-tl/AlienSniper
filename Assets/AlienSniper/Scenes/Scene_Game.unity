@@ -1532,7 +1532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftJoystickBackgroundImage: {fileID: 1238016896}
-  leftJoyStickAlwaysVisible: 1
+  leftJoyStickAlwaysVisible: 0
 --- !u!4 &1478763105
 Transform:
   m_ObjectHideFlags: 0
