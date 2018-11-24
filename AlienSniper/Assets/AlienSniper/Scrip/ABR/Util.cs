@@ -6,6 +6,7 @@ public class Util : MonoBehaviour {
     
     float timer = 0;
     int i = 0;
+    int otro = 0;
     public GameObject[] enemy_group;
     public GameObject[] ally_group;
     public Vector3[] posicion_entrada;
@@ -22,6 +23,8 @@ public class Util : MonoBehaviour {
     public int cantidad_tropa;
 
     public bool tropa = false;
+
+
     // Use this for initialization
     void Start() {
         cant_ally = 5;
@@ -38,21 +41,20 @@ public class Util : MonoBehaviour {
 
         Cargar_posiciones();
         asignacion = 0;
-        
 
+        enemy_group = new GameObject[cant_posiciones];
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-
-
-     if(tropa)
-        {
-            
+        if(tropa)
+        {          
             timer += Time.deltaTime;          
             while (i<cant_posiciones && timer > 2.5f)
             {               
+                timer = 0;
+                i++;
                 Create_();
             }
             
@@ -63,6 +65,7 @@ public class Util : MonoBehaviour {
         }
 	}
 
+    //Carga Las posiciones iniciales donde se cubren los enemmy
     public void Cargar_posiciones()
     {
         for (int i = 0; i < cant_posiciones; i++)
@@ -80,16 +83,19 @@ public class Util : MonoBehaviour {
             }
         }
     }
+
+    // Asigna a los ennemy la posicion donde se cubren
     public Vector3 Asignar_posicion()
     {
         Vector3 posicion;
         posicion = posicion_entrada[asignacion];
         print(asignacion);
-        asignacion ++;
+        asignacion++;
         return posicion;
-        
+
     }
 
+    //Instancia los Ally en la escena
     public void Load_Ally()
     {
         for (int j =0;j< cant_ally;j++)
@@ -100,12 +106,12 @@ public class Util : MonoBehaviour {
             ally_group[j] = Ally;
             Ally.name = names;
         }
-
     }
+
     public Vector3  Assign_Ally()
     {
-        Vector3 posocion;
-      
+        Vector3 posocion = new Vector3(0, 0, 0);
+       
         for (int j=0; j< cant_ally; j++)
         {
             if (ally_group[j].gameObject.GetComponent<Ally>().attacking == false)
@@ -114,24 +120,22 @@ public class Util : MonoBehaviour {
                 posocion = ally_group[j].transform.position;
                 break;
             }
-           if(j == (cant_ally-1))
-            {
+           else if(j == (cant_ally-1))
+           {
                 posocion = ally_group[j].transform.position;
-            }
+                return posocion;               
+           }
         }
-        return new Vector3(0,0,0);
+        return posocion;
     }
 
+
+    //Insttancia los enemmy y lo coloca en una matriz
     public void Create_()
-    {
-    	if (i < cant_posiciones)
-    	{
-    			GameObject enemy = Instantiate(Resources.Load("Cube") as GameObject, transform.position, transform.rotation);
-        enemy_group[i] = enemy;
-        timer = 0;
-        i++;
-    	}
-	
+    {  	
+            GameObject enemy = Instantiate(Resources.Load("Cube") as GameObject, transform.position, transform.rotation);
+            enemy_group[otro] = enemy;
+            otro++;	
     }
 
 }

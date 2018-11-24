@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Moving : MonoBehaviour {
+public class Moving : Util {
 
     public bool state;
 
@@ -38,7 +38,7 @@ public class Moving : MonoBehaviour {
         }
         if (state)
         {
-
+            //Posicion_destino = Assign_Ally();
 
         }
 
