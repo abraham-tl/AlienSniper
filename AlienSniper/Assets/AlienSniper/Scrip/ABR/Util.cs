@@ -53,11 +53,7 @@ public class Util : MonoBehaviour {
             timer += Time.deltaTime;          
             while (i<cant_posiciones && timer > 2.5f)
             {               
-                GameObject enemy = Instantiate(Resources.Load("Cube") as GameObject, transform.position, transform.rotation);
-                enemy.AddComponent.<Enemmy>();
-                enemy_group[i] = enemy;
-                timer = 0;
-                i++;
+                Create_();
             }
             
             if (i >cant_posiciones)
@@ -125,4 +121,17 @@ public class Util : MonoBehaviour {
         }
         return new Vector3(0,0,0);
     }
+
+    public void Create_()
+    {
+    	if (i < cant_posiciones)
+    	{
+    			GameObject enemy = Instantiate(Resources.Load("Cube") as GameObject, transform.position, transform.rotation);
+        enemy_group[i] = enemy;
+        timer = 0;
+        i++;
+    	}
+	
+    }
+
 }
