@@ -14,7 +14,7 @@ public class Disparo : MonoBehaviour
     public bool activa;
     private void Start ()
 	{
-        force = 500f;
+        force = 1000f;
         activa = false;
         Atributos();
 	}
